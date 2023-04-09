@@ -34,7 +34,7 @@
 <body>
     <div class="main d-flex justify-content-center align-items-center">
         <div class="head">
-            <h1>Selamat Datang di Sarana Penunjang STMM</h1>
+            <h1>Selamat Datang di web STMM</h1>
         </div>
         <div class="login-box">
             <form action="" method="post">
