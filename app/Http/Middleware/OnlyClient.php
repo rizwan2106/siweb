@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Http\Middleware\Auth;
 
-class OnlyGuest
+class OnlyClient
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class OnlyGuest
     */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()) {
+        if(Auth::user()->role_id != 2) {
             return redirect('equipments');
         }
 
