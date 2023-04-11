@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function profile()
     {
-        // dd('ini adalah halaman profile');
+        return view('profile');
     }
 }
