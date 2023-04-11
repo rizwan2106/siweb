@@ -34,7 +34,7 @@
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
         <div class="head">
-            <h1>Selamat Datang di Sarana Penunjang STMM</h1>
+            <h1>Selamat Datang di web STMM</h1>
         </div>
         @if (session('status'))
             <div class="alert alert-danger" style="width: 500px">
