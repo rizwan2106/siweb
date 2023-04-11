@@ -37,7 +37,7 @@
             <h1>Selamat Datang di web STMM</h1>
         </div>
         @if (session('status'))
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" style="width: 500px">
                 {{ session('message') }}
             </div>
         @endif
@@ -56,9 +56,7 @@
                     <button type="submit" class="btn btn-primary form-control">Login</button>
                 </div>
                 <div>
-                    <p>First time using Sarana Penunjang STMM?
-                        <a href="register">Sign Up</a>
-                    </p>
+                    Don't have account? <a href="register">Sign Up</a>
                 </div>
             </form>
         </div>
