@@ -8,6 +8,6 @@ class EquipmentController extends Controller
 {
     public function index()
     {
-        dd('ini adalah halaman peralatan');
+        return view('equipment');
     }
 }
