@@ -32,10 +32,24 @@ Route::middleware('only_guest')->group(function() {
 
 Route::middleware('only_guest')->group(function() {
     Route::get('logout', [AuthController::class, 'logout']);
+
     Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
+
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
+
     Route::get('equipments', [EquipmentController::class, 'index']);
+
     Route::get('categories', [CategoryController::class, 'index']);
+    Route::get('category-add', [CategoryController::class, 'add']);
+    Route::post('category-add', [CategoryContreller::class, 'loan']);
+    Route::get('category-edit/{slug}', [CategoryContreller::class, 'edit']);
+    Route::put('category-edit/{slug}', [CategoryContreller::class, 'update']);
+    Route::get('category-delete/{slug}', [CategoryContreller::class, 'delete']);
+    Route::get('category-destroy/{slug}', [CategoryContreller::class, 'destroy']);
+    Route::get('category-deleted', [CategoryContreller::class, 'deletedCategory']);
+    Route::get('category-restore/{slug}', [CategoryContreller::class, 'restore']);
+
     Route::get('users', [UserController::class, 'index']);
+
     Route::get('loan-logs', [LoanLogController::class, 'index']);
 });
