@@ -25,7 +25,7 @@
                     @if (Auth::user()->role_id == 1)
                     <a href="dashboard" @if(request()->route()->uri == 'dashboard') class="active" @endif>Dashboard</a>
                     <a href="equipments" @if(request()->route()->uri == 'equipments') class="active" @endif>Equipments</a>
-                    <a href="categories" @if(request()->route()->uri == 'categories') class="active" @endif>Categories</a>
+                    <a href="categories" @if(request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class="active" @endif>Categories</a>
                     <a href="users" @if(request()->route()->uri == 'users') class="active" @endif>Users</a>
                     <a href="loan-logs" @if(request()->route()->uri == 'loan-log') class="active" @endif>Loan Log</a>
                     <a href="logout">Logout</a>
