@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -72,7 +73,7 @@ class AuthController extends Controller
             'address' => 'required',
         ]);
 
-        $request['password'] = Hash::make($request->password)
+        $request['password'] = Hash::make($request->password);
         $user = User::create($request->all());
 
         Session::flash('status', 'Success');

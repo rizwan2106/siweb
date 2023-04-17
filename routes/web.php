@@ -38,16 +38,24 @@ Route::middleware('only_guest')->group(function() {
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
 
     Route::get('equipments', [EquipmentController::class, 'index']);
+    Route::get('equipment-add', [EquipmentController::class, 'add']);
+    Route::post('equipment-add', [EquipmentController::class, 'loan']);
+    Route::get('equipment-edit/{slug}', [EquipmentController::class, 'edit']);
+    Route::post('equipment-edit/{slug}', [EquipmentController::class, 'update']);
+    Route::get('equipment-delete/{slug}', [EquipmentController::class, 'delete']);
+    Route::get('equipment-destroy/{slug}', [EquipmentController::class, 'destroy']);
+    Route::get('equipment-deleted', [EquipmentController::class, 'deletedEquipment']);
+    Route::get('equipment-restore/{slug}', [EquipmentController::class, 'restore']);
 
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);
-    Route::post('category-add', [CategoryContreller::class, 'loan']);
-    Route::get('category-edit/{slug}', [CategoryContreller::class, 'edit']);
-    Route::put('category-edit/{slug}', [CategoryContreller::class, 'update']);
-    Route::get('category-delete/{slug}', [CategoryContreller::class, 'delete']);
-    Route::get('category-destroy/{slug}', [CategoryContreller::class, 'destroy']);
-    Route::get('category-deleted', [CategoryContreller::class, 'deletedCategory']);
-    Route::get('category-restore/{slug}', [CategoryContreller::class, 'restore']);
+    Route::post('category-add', [CategoryController::class, 'loan']);
+    Route::get('category-edit/{slug}', [CategoryController::class, 'edit']);
+    Route::put('category-edit/{slug}', [CategoryController::class, 'update']);
+    Route::get('category-delete/{slug}', [CategoryController::class, 'delete']);
+    Route::get('category-destroy/{slug}', [CategoryController::class, 'destroy']);
+    Route::get('category-deleted', [CategoryController::class, 'deletedCategory']);
+    Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
 
     Route::get('users', [UserController::class, 'index']);
 
