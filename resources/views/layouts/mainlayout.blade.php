@@ -26,7 +26,7 @@
                     <a href="/dashboard" @if(request()->route()->uri == 'dashboard') class="active" @endif>Dashboard</a>
                     <a href="/equipments" @if(request()->route()->uri == 'equipments' || request()->route()->uri == 'equipment-add' || request()->route()->uri == 'equipment-deleted' || request()->route()->uri == 'equipment-edit/{slug}' || request()->route()->uri == 'equipment-delete/{slug}') class="active" @endif>Equipments</a>
                     <a href="/categories" @if(request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class="active" @endif>Categories</a>
-                    <a href="/users" @if(request()->route()->uri == 'users') class="active" @endif>Users</a>
+                    <a href="/users" @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active" @endif>Users</a>
                     <a href="/loan-logs" @if(request()->route()->uri == 'loan-log') class="active" @endif>Loan Log</a>
                     <a href="/logout">Logout</a>
                     @else
