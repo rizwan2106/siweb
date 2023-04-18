@@ -2,6 +2,8 @@
 
 @section('title', 'Dashboard')
 
+@section('page-name', 'Dashboard')
+
 @section('content')
     <h1>Equipment List</h1>
 
