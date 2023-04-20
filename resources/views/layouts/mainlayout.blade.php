@@ -30,6 +30,7 @@
                         <a href="/users" @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active" @endif>Users</a>
                         <a href="/loan-logs" @if(request()->route()->uri == 'loan-log') class="active" @endif>Loan Log</a>
                         <a href="/" @if(request()->route()->uri == '/') class="active" @endif>Equipment List</a>
+                        <a href="/equipment-loan" @if(request()->route()->uri == 'equipment-loan') class="active" @endif>Equipment Loan</a>
                         <a href="/logout">Logout</a>
                         @else
                         <a href="/profile" @if(request()->route()->uri == 'profile') class="active" @endif>Profile</a>
