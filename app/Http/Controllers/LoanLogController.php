@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanLogs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class LoanLogController extends Controller
 {
     public function index()
     {
-        return view('loanlog');
+        $loanlogs = LoanLogs::with(['mahasiswa', 'equipment'])->get();
+        return view('loanlog', ['loan_logs' => $loanlogs]);
     }
 }

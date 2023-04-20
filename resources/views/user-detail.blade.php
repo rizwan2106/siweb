@@ -37,4 +37,9 @@
             <input type="text" class="form-control" readonly value="{{$user->status}}">
         </div>
     </div>
+
+    <div class="mt-5">
+        <h2>User's Loan Log</h2>
+        <x-loan-log-table :loanlog='$loan_logs' />
+    </div>
 @endsection

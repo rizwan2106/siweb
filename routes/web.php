@@ -68,7 +68,7 @@ Route::middleware('auth')->group(function() {
 
         Route::get('equipment-loan', [EquipmentLoanController::class, 'index']);
         Route::post('equipment-loan', [EquipmentLoanController::class, 'stmm']);
-    });
 
-    Route::get('loan-logs', [LoanLogController::class, 'index']);
+        Route::get('loan-logs', [LoanLogController::class, 'index']);
+    });
 });

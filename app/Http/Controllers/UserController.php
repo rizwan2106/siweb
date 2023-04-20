@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\LoanLogs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,8 @@ class UserController extends Controller
 {
     public function profile()
     {
-        return view('profile');
+        $loanlogs = LoanLogs::with(['mahasiswa', 'equipment'])->where('user_id', Auth::user()->id)->get();
+        return view('profile', ['loan_logs' => $loanlogs]);
     }
 
     public function index()
@@ -28,7 +30,8 @@ class UserController extends Controller
     public function show($slug)
     {
         $user = User::where('slug', $slug)->first();
-        return view('user-detail', ['user' => $user]);
+        $loanlogs = LoanLogs::with(['mahasiswa', 'equipment'])->where('user_id', $user->id)->get();
+        return view('user-detail', ['user' => $user, 'loan_logs' => $loanlogs]);
     }
 
     public function approve($slug)
