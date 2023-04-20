@@ -8,6 +8,7 @@ use App\Http\Controllers\LoanLogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\EquipmentLoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,9 @@ Route::middleware('auth')->group(function() {
         Route::get('user-destroy/{slug}', [UserController::class, 'destroy']);
         Route::get('user-banned', [UserController::class, 'bannedUser']);
         Route::get('user-restore/{slug}', [UserController::class, 'restore']);
+
+        Route::get('equipment-loan', [EquipmentLoanController::class, 'index']);
+        Route::post('equipment-loan', [EquipmentLoanController::class, 'stmm']);
     });
 
     Route::get('loan-logs', [LoanLogController::class, 'index']);
