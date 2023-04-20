@@ -1,7 +1,11 @@
 @extends('layouts.mainlayout')
 
-@section('title', 'Dashboard')
+@section('title', 'Loan Log')
 
 @section('content')
-    <h1>ini adalah halaman peminjaman alat</h1>
+    <h1>Loan Log List</h1>
+
+    <div>
+        <x-loan-log-table :loanlog='$loan_logs' />
+    </div>
 @endsection
