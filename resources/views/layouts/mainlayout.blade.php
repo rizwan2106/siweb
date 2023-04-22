@@ -31,6 +31,7 @@
                         <a href="/loan-logs" @if(request()->route()->uri == 'loan-log') class="active" @endif>Loan Log</a>
                         <a href="/" @if(request()->route()->uri == '/') class="active" @endif>Equipment List</a>
                         <a href="/equipment-loan" @if(request()->route()->uri == 'equipment-loan') class="active" @endif>Equipment Loan</a>
+                        <a href="equipment-return" @if(request()->route()->uri == 'equipment-return') class="active" @endif>Equipment Return</a>
                         <a href="/logout">Logout</a>
                         @else
                         <a href="/profile" @if(request()->route()->uri == 'profile') class="active" @endif>Profile</a>

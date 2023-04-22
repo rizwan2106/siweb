@@ -58,4 +58,32 @@ class EquipmentLoanController extends Controller
             }
         }
     }
+
+    public function returnEquipment()
+    {
+        $user = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
+        $equipments = Equipment::all();
+        return view('return-equipment', ['users' => $users, 'equipments' => $equipments]);
+    }
+
+    public function saverReturnEquipment(Request $request)
+    {
+        $loan = LoanLogs::where('user_id', $request->user_id)->where('equipment_id', $request->equipment_id)->where('actual_return_date', '!=', null)->count();
+        $loanData = $loan->first();
+        $countData = $loan->count();
+
+        if($countData == 1) {
+            $loanData->actual_return_date = Carbon::now()->toDateString();
+            $loanData->save();
+
+            Session::flash('message', 'The equipment is returned successfully');
+            Session::flash('alert-class', 'alert-success');
+            return redirect('equipment-return');
+        }
+        else {
+            Session::flash('message', 'There is error in process');
+            Session::flash('alert-class', 'alert-danger');
+            return redirect('equipment-return');
+        }
+    }
 }
